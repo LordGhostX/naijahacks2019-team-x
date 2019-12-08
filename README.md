@@ -3,7 +3,9 @@
 ## Team X
 
 ## Team Members
-* [Solomon Esenyi](https://github.com/LordGhostX) [dosolomon5@gmail.com](mailto:dosolomon5@gmail.com) - Machine & Deep Learning Engineer | Web Backend Developer
+* [Solomon Esenyi](https://github.com/LordGhostX) - Machine & Deep Learning Engineer | Web Backend Developer
+* [Ijaola David](https://github.com/Ija24) - Web Frontend Developer
+* [Clara Odiri](mailto:onyiclaraodiri@gmail.com) - Data Science | Machine Learning Engineer
 
 ## Problem
 Still thinking...
