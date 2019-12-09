@@ -8,18 +8,23 @@
 * [Clara Odiri](mailto:onyiclaraodiri@gmail.com) - Data Science | Machine Learning Engineer
 
 ## Problem
-Still thinking...
+* CCTV footage analysis takes a lot of time and man power.
+* Important clues can be overlooked during CCTV footage analysis because the amount of video to analyse is too much.
+* Response rate to tackle violence caught by CCTV camera is very low.
 
 ## Proposed Solution
-Still thinking...
+* A system that is able to take a long CCTV footage and summarize it into a short, abridged, synopsis of the event.
+* A system that is able to automatically detect and identify violence and raise an alarm on time.
+
+## Benefit
+* Reduce in time and man power spent analysing CCTV footage.
+* Reduce in error or overlooked signs in CCTV footage analyis.
+* Increase in the response rate to violence caught by CCTV cameras.
 
 ## Proposed Stack
 * Web (HTML, CSS, JS)
 * Django | Flask
 * Tensorflow | PyTorch | Scikit-Learn
-
-## Benefit
-Still thinking...
 
 ## Running Project Locally
 ### Clone the repository
