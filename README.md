@@ -3,8 +3,8 @@
 ## Team X
 
 ## Team Members
-* [Solomon Esenyi](https://github.com/LordGhostX) - Machine & Deep Learning Engineer | Web Backend Developer
-* [Ijaola David](https://github.com/Ija24) - Web Frontend Developer
+* [Solomon Esenyi](https://github.com/LordGhostX) - Machine & Deep Learning Engineer | Web Backend Engineer
+* [Ijaola David](https://github.com/Ija24) - Web Frontend Engineer
 * [Clara Odiri](mailto:onyiclaraodiri@gmail.com) - Data Science | Machine Learning Engineer
 
 ## Problem
@@ -24,7 +24,7 @@ Still thinking...
 ## Running Project Locally
 ### Clone the repository
 ```
-git clone https://github.com/LordGhostX/team-x-naijahacks-2019
+git clone https://github.com/LordGhostX/naijahacks2019-team-x
 ```
 
 ### Install Dependencies
