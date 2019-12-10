@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   DCCTV - Summarize long CCTV footage into short, abridged, synopsis.
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'styles/vendor/slick.css') }}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'styles/vendor/slick-theme.css') }}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'styles/vendor/aos.css') }}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'styles/vendor/perfect-scrollbar.css') }}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'styles/css/themes/lite-purple.min.css') }}" rel="stylesheet"/>
+ </head>
+ <body class="text-left">
+  <!-- Pre Loader Strat  -->
+  <div class="loadscreen" id="preloader">
+   <div class="loader spinner-bubble spinner-bubble-primary">
+   </div>
+  </div>
+  <!-- Pre Loader end  -->
+  <div class="app-landing-wrap landing_wrap">
+   <div class="landing-gradient-black-blue" id="landing_wrap">
+    <!--=============== Header start ================-->
+    <div class="main-header header-fixed-default" id="home-header">
+     <nav class="navbar container w-100 navbar-expand-lg navbar-transparent bg-transparent">
+      <div class="logo">
+       <img alt="" src="{{ url_for('static', filename = 'images/logo_white.png') }}"/>
+      </div>
+      <div aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse">
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <div style="margin: auto">
+       </div>
+       <div class="header-part-right">
+        <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+          <a class="scroll-to nav-link m-2" href="#">
+           Home
+           <span class="sr-only">
+            (current)
+           </span>
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="scroll-to nav-link m-2" href="#features-wrap">
+           Features
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="scroll-to nav-link m-2" href="#services-wrap">
+           Services
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="scroll-to nav-link m-2" href="#pricing-wrap">
+           Pricing
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="scroll-to nav-link m-2" href="#teams-wrap">
+           Team
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="scroll-to nav-link m-2" href="#contacts-wrap">
+           Contact Us
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="btn half-button btn-success btn-lg pl-4 pr-4 mb-2 mt-2 text-uppercase" href="summarizer-demo.html" target="_blank">
+           See Demo
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <!--=============== Header End ================-->
+    <!-- ============ Main content start ============= -->
+    <div class="main-content-wrap">
+     <!-- intro-section -->
+     <section class="intro-three-Wrap text-left text-white" id="intro-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-6 intro-three-LeftSection pb-5">
+         <h1 class="font-weight-bold text-white text-42 mb-3 t-shadow">
+          The future of CCTV footage analysis is here!
+         </h1>
+         <p class="text-20 mb-4">
+          Meet DCCTV. A tool that helps summarize long CCTV footages into short, abridged, synopsis along with automatic violence detection leveraging artificial intelligence technology.
+         </p>
+         <div class="mb-5">
+          <ul class="list-inline">
+           <li class="mb-3">
+            <i class="eva eva-checkmark-outline mr-2 text-warning">
+            </i>
+            Powerful, Accurate &amp; Intelligent
+           </li>
+           <li class="mb-3">
+            <i class="eva eva-checkmark-outline mr-2 text-warning">
+            </i>
+            User Friendly &amp; Easy to Use
+           </li>
+          </ul>
+         </div>
+         <div class="intro-three-Buttons">
+          <a class="btn half-button btn-outline-white btn-lg pl-5 pr-5 pb-2 mr-2 mb-4 text-uppercase" href="#features-wrap">
+           Learn More
+          </a>
+          <a class="btn half-button btn-success btn-lg pl-5 pr-5 pb-2 mb-4 text-uppercase" href="summarizer-demo.html" target="_blank">
+           See Demo
+          </a>
+         </div>
+        </div>
+        <div class="col-md-5 offset-md-1 intro-three-RightSection d-flex align-items-center">
+         <div class="intro-three-ProductImage" data-aos="fade-left">
+          <img alt="img" class="img-responsive" src="{{ url_for('static', filename = 'images/landing/svg/v3-header.svg') }}"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="overlay">
+      </div>
+     </section>
+     <!-- end::intro-section -->
+     <!-- start-features -->
+     <section class="features-five p-t-b-80" id="features-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-lg-5">
+         <h2 class="font-weight-bold">
+          DCCTV's Awesome Features
+         </h2>
+         <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet enim eget eros consequat placerat non quis risus. Curabitur fermentum ipsum ac tincidunt viverra.
+         </p>
+         <div class="row">
+          <div class="col-md-6 col-lg-12 mt-4 mb-4 col-sm-6" data-aos="fade-right">
+           <div class="benefits-contents d-flex">
+            <i class="eva eva-video mr-2 text-28">
+            </i>
+            <div class="benefits-contents__info">
+             <h3 class="card-title font-weight-bold">
+              CCTV footage Summarization
+             </h3>
+             <span class="text-15">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-6 col-lg-12 mt-4 mb-4 col-sm-6" data-aos="fade-up">
+           <div class="benefits-contents d-flex">
+            <i class="eva eva-file-text mr-2 text-28">
+            </i>
+            <div class="benefits-contents__info">
+             <h3 class="card-title font-weight-bold">
+              Video Text Summarization
+             </h3>
+             <span class="text-15">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="col-md-6 col-lg-12 mt-4 mb-4 col-sm-6 mb-lg-0" data-aos="fade-left">
+           <div class="benefits-contents d-flex">
+            <i class="eva eva-alert-circle mr-2 text-28">
+            </i>
+            <div class="benefits-contents__info">
+             <h3 class="card-title font-weight-bold">
+              Automatic Violence Detection
+             </h3>
+             <span class="text-15">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-5 offset-lg-1 d-flex align-items-center">
+         <div class="benefits-left-img mb-4">
+          <img alt="" data-aos="fade-left" data-aos-duration="1800" src="{{ url_for('static', filename = 'images/landing/svg/service_3-1.svg') }}"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- end-features -->
+     <!-- start-services -->
+     <section class="best-wrap p-t-b-80 light-gray" id="services-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-12 section-header mb-5">
+         <h2 class="font-weight-bold">
+          Our Services
+         </h2>
+         <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam laborum,
+                                    ducimus, laboriosam sint dolorum aspernatur libero.
+         </p>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-right">
+         <div class="card o-hidden text-left">
+          <div class="card-body">
+           <div class="left_icon float-left w-20 p-3 text-center">
+            <i class="eva eva-flash-outline">
+            </i>
+           </div>
+           <div class="right_content w-70 float-left p-3">
+            <h4 class="card-title font-weight-bold">
+             CCTV footage Summarization
+            </h4>
+            <p class="card-text">
+             Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-6 mb-4" data-aos="fade-left">
+         <div class="card o-hidden text-left">
+          <div class="card-body">
+           <div class="left_icon float-left w-20 p-3 text-center">
+            <i class="eva eva-alert-circle-outline">
+            </i>
+           </div>
+           <div class="right_content w-70 float-left p-3">
+            <h4 class="card-title font-weight-bold">
+             Automatic Violence Detection
+            </h4>
+            <p class="card-text">
+             Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-6 mb-4 mb-lg-0 mb-md-0" data-aos="fade-up">
+         <div class="card o-hidden text-left">
+          <div class="card-body">
+           <div class="left_icon float-left w-20 p-3 text-center">
+            <i class="eva eva-lock-outline">
+            </i>
+           </div>
+           <div class="right_content w-70 float-left p-3">
+            <h4 class="card-title font-weight-bold">
+             Improved Security via CCTV
+            </h4>
+            <p class="card-text">
+             Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-6 mb-lg-0 mb-md-0" data-aos="fade-up">
+         <div class="card o-hidden text-left">
+          <div class="card-body">
+           <div class="left_icon float-left w-20 p-3 text-center">
+            <i class="eva eva-phone-outline">
+            </i>
+           </div>
+           <div class="right_content w-70 float-left p-3">
+            <h4 class="card-title font-weight-bold">
+             24/7 Customer Support
+            </h4>
+            <p class="card-text">
+             Lorem Ipsum is simply dummy text of the printing and
+                                                typesetting industry.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+       </div>
+      </div>
+     </section>
+     <!-- end::services -->
+     <!-- start::price -->
+     <section class="pricing-four p-t-b-80" id="pricing-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-12">
+         <div class="section-header col-md-12 mb-5">
+          <h2 class="font-weight-bold">
+           Our Pricing
+          </h2>
+          <p>
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam
+                                        laborum, ducimus, laboriosam sint dolorum aspernatur libero.
+          </p>
+         </div>
+        </div>
+        <div class="col-md-6 mb-lg-0 col-lg-4 mb-4" data-aos="fade-right">
+         <div class="pricing-four__card">
+          <div class="card">
+           <div class="card-body">
+            <div class="pricing-four__contents">
+             <div class="pricing-four__titles text-center">
+              <h2 class="font-weight-bold mt-4 mb-4">
+               Freebie
+              </h2>
+             </div>
+             <div class="pricing-four__values text-center mt-4 mb-4">
+              <p class="text-25">
+               $
+               <span class="text-50 font-weight-bold">
+                0
+               </span>
+               / hour
+              </p>
+             </div>
+             <ul class="list-group list-group-flush mt-5">
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                3
+               </span>
+               Video Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                3
+               </span>
+               Video - Text Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                3
+               </span>
+               Violence Detection Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-close align-middle mr-2">
+               </i>
+               <span class="text-mute">
+                <strike>
+                 Unlimited Customer Support
+                </strike>
+               </span>
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-close align-middle mr-2">
+               </i>
+               <span class="text-mute">
+                <strike>
+                 DCCTV API Access
+                </strike>
+               </span>
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-close align-middle mr-2">
+               </i>
+               <span class="text-mute">
+                <strike>
+                 Developer
+                                                                Support
+                </strike>
+               </span>
+              </li>
+             </ul>
+             <div class="text-center">
+              <a href="summarizer-demo.html" target="_blank">
+               <button class="btn btn-lg btn-outline-primary btn-rounded mt-5 mb-4 pr-5 pl-5">
+                Get Started
+               </button>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 mb-lg-0 col-lg-4 mb-4" data-aos="fade-up">
+         <div class="pricing-four__card">
+          <div class="card overlay">
+           <div class="card-body">
+            <div class="pricing-four__contents">
+             <div class="pricing-four__titles--white text-center">
+              <h2 class="font-weight-bold mt-4 mb-4 text-white">
+               Basic
+              </h2>
+             </div>
+             <div class="pricing-four__values text-center mt-4 mb-4 text-white">
+              <p class="text-25">
+               $
+               <span class="text-50 font-weight-bold">
+                0.04
+               </span>
+               / hour
+              </p>
+             </div>
+             <ul class="list-group list-group-flush mt-5 text-white">
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Video Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Video - Text Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Violence Detection Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Customer Support
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-close align-middle mr-2">
+               </i>
+               <span class="text-mute">
+                <strike>
+                 DCCTV API Access
+                </strike>
+               </span>
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva--white eva-close align-middle mr-2">
+               </i>
+               <span class="text-mute">
+                <strike>
+                 Developer support
+                </strike>
+               </span>
+              </li>
+             </ul>
+             <div class="text-center">
+              <a href="summarizer-demo.html" target="_blank">
+               <button class="btn btn-lg btn-outline-white btn-rounded mt-5 mb-4 pr-5 pl-5">
+                Get Started
+               </button>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-6 mb-lg-0 col-lg-4" data-aos="fade-left">
+         <div class="pricing-four__card">
+          <div class="card">
+           <div class="card-body">
+            <div class="pricing-four__contents">
+             <div class="pricing-four__titles text-center">
+              <h2 class="font-weight-bold mt-4 mb-4">
+               Pro
+              </h2>
+             </div>
+             <div class="pricing-four__values text-center mt-4 mb-4">
+              <p class="text-25">
+               $
+               <span class="text-50 font-weight-bold">
+                0.05
+               </span>
+               / hour
+              </p>
+             </div>
+             <ul class="list-group list-group-flush mt-5">
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Video Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Video - Text Summary Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Violence Detection Hours
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="font-weight-800">
+                Unlimited
+               </span>
+               Customer Support
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="">
+                DCCTV API Access
+               </span>
+              </li>
+              <li class="list-group-item bg-transparent border-0 pb-0">
+               <i class="eva eva-checkmark-outline align-middle mr-2">
+               </i>
+               <span class="">
+                Developer support
+               </span>
+              </li>
+             </ul>
+             <div class="text-center">
+              <a href="summarizer-demo.html" target="_blank">
+               <button class="btn btn-lg btn-outline-primary btn-rounded mt-5 mb-4 pr-5 pl-5">
+                Get Started
+               </button>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- end::price -->
+     <!-- start::team -->
+     <section class="team-wrap p-t-b-80 light-gray" id="teams-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-12 section-header mb-5">
+         <h2 class="font-weight-bold">
+          Our Team
+         </h2>
+         <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam laborum,
+                                    ducimus, laboriosam sint dolorum aspernatur libero.
+         </p>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-6 col-lg-4 col-sm-6 mb-lg-0 mb-4" data-aos="fade-right">
+         <div class="card card-profile-1">
+          <div class="card-body text-center">
+           <div class="avatar box-shadow-2 mb-3">
+            <img alt="" src="{{ url_for('static', filename = 'images/landing/faces/10.jpg') }}"/>
+           </div>
+           <h5 class="font-weight-medium card-title m-0">
+            Solomon Esenyi
+           </h5>
+           <p class="mt-0">
+            Machine &amp; Deep Learning Engineer
+           </p>
+           <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           </p>
+           <button class="btn half-button btn-gradient">
+            Contact Solomon
+           </button>
+           <div class="card-socials-simple mt-4">
+            <a class="text-20 mr-2" href="https://twitter.com/LordGhostX">
+             <i class="eva eva-twitter">
+             </i>
+            </a>
+            <a class="text-20 mr-2" href="https://github.com/LordGhostX">
+             <i class="eva eva-github">
+             </i>
+            </a>
+            <a class="text-20 mr-2" href="mailto:dosolomon5@gmail.com">
+             <i class="eva eva-email">
+             </i>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-6 col-lg-4 col-sm-6 mb-lg-0 mb-4" data-aos="fade-right">
+         <div class="card card-profile-1">
+          <div class="card-body text-center">
+           <div class="avatar box-shadow-2 mb-3">
+            <img alt="" src="{{ url_for('static', filename = 'images/landing/faces/5.jpg') }}"/>
+           </div>
+           <h5 class="font-weight-medium card-title m-0">
+            Ijaola David
+           </h5>
+           <p class="mt-0">
+            Web Frontend Engineer
+           </p>
+           <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           </p>
+           <button class="btn half-button btn-gradient">
+            Contact David
+           </button>
+           <div class="card-socials-simple mt-4">
+            <a class="text-20 mr-2" href="#">
+             <i class="eva eva-twitter">
+             </i>
+            </a>
+            <a class="text-20 mr-2" href="https://github.com/Ija24">
+             <i class="eva eva-github">
+             </i>
+            </a>
+            <a class="text-20 mr-2" href="#">
+             <i class="eva eva-email">
+             </i>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+       </div>
+      </div>
+     </section>
+     <!-- end::team -->
+     <!-- start::faq -->
+     <section class="faqs-wrap p-t-b-80" id="faqs-wrap">
+      <div class="container">
+       <div class="row">
+       </div>
+       <div class="row">
+        <div class="col-md-6 col-sm-12 mb-4 mb-lg-0 mb-md-0 mb-4">
+         <div class="section-header mb-5">
+          <h2 class="font-weight-bold">
+           FAQ
+          </h2>
+          <p>
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam
+                                        laborum, ducimus, laboriosam sint dolorum aspernatur libero.
+          </p>
+         </div>
+         <div class="accordion" id="accordionExample">
+          <div class="card ul-card__border-radius">
+           <div class="card-header">
+            <h6 class="card-title mb-0">
+             <a class="text-default" data-toggle="collapse" href="#accordion-item-group1">
+              Question #1
+             </a>
+            </h6>
+           </div>
+           <div class="collapse show" data-parent="#accordionExample" id="accordion-item-group1">
+            <div class="card-body">
+             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch.
+            </div>
+           </div>
+          </div>
+          <div class="card ul-card__border-radius">
+           <div class="card-header">
+            <h6 class="card-title mb-0">
+             <a class="collapsed text-default" data-toggle="collapse" href="#accordion-item-group2">
+              Question #2
+             </a>
+            </h6>
+           </div>
+           <div class="collapse" data-parent="#accordionExample" id="accordion-item-group2">
+            <div class="card-body">
+             Ð¢on cupidatat skateboard dolor brunch. Ð¢esciunt laborum eiusmod. Brunch
+                                                3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                                coffee nulla assumenda.
+            </div>
+           </div>
+          </div>
+          <div class="card ul-card__border-radius">
+           <div class="card-header">
+            <h6 class="card-title mb-0">
+             <a class="collapsed text-default" data-toggle="collapse" href="#accordion-item-default3">
+              Question #3
+             </a>
+            </h6>
+           </div>
+           <div class="collapse" data-parent="#accordionExample" id="accordion-item-default3">
+            <div class="card-body">
+             3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                                truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                                aliqua put a bird on it.
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-5 offset-md-1 col-sm-12 d-flex align-items-center" data-aos="fade-left">
+         <img alt="" class="img-responsive w-100" src="{{ url_for('static', filename = 'images/landing/svg/faqs2.svg') }}"/>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- end::faq -->
+     <!-- start::contact-form -->
+     <section class="contact-form-wrap light-gray p-t-b-80" id="contacts-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="form-wrap col-md-6 mb-4" data-aos="fade-right">
+         <div class="section-header mb-5">
+          <h2 class="font-weight-bold">
+           Get in Touch With Us !
+          </h2>
+          <p>
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ea quam
+                                        laborum, ducimus, laboriosam sint dolorum aspernatur libero
+          </p>
+         </div>
+         <div *ngif="success" [@animate]="{value:'*',params:{y:'-120px',opacity:'0',delay:'100ms', duration: '400ms'}}" class="alert alert-success alert-dismissible fade show" role="alert">
+          <button (click)="success=false" class="close" type="button">
+           <span aria-hidden="true">
+            ×
+           </span>
+          </button>
+          <strong>
+           Your Message Sent Succefully
+          </strong>
+         </div>
+         <form class="row form" role="form">
+          <div class="form-group mb-4 col-md-6">
+           <label for="">
+            <i class="eva eva-person-outline">
+            </i>
+           </label>
+           <input class="form-control" id="" name="Name" placeholder="Your Name" required="" type="text"/>
+          </div>
+          <div class="form-group mb-4 col-md-6">
+           <label for="">
+            <i class="eva eva-email-outline">
+            </i>
+           </label>
+           <input aria-describedby="helpId" class="form-control" name="email" placeholder="Your email" required="" type="email"/>
+          </div>
+          <div class="form-group mb-4 col-md-12">
+           <label for="">
+            <i class="eva eva-edit-2-outline">
+            </i>
+           </label>
+           <input aria-describedby="helpId" class="form-control" name="subject" placeholder="Your subject here" required="" type="text"/>
+          </div>
+          <div class="form-group mb-4 col-md-12">
+           <label for="">
+            <i class="eva eva-edit-outline">
+            </i>
+           </label>
+           <textarea class="form-control" name="message" placeholder="Your message here" required="" rows="5"></textarea>
+          </div>
+          <div class="form-group col-md-12">
+           <button class="btn btn-block half-button form-submit-button btn-large btn-gradient" type="submit">
+            Send
+                                            message
+           </button>
+          </div>
+         </form>
+        </div>
+        <div class="col-md-6 align-items-center" data-aos="fade-left">
+         <div class="right-contact-wrap ml-5">
+          <img alt="Image" class="img-responsive zoom-fade" src="{{ url_for('static', filename = 'images/landing/svg/contact2.svg') }}"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- end::contact-form -->
+     <!-- Footer Start -->
+     <div class="flex-grow-1">
+     </div>
+     <!-- start subscribe section -->
+     <section class="subscribe p-t-b-80" id="subscribe-wrap">
+      <div class="container">
+       <div class="row text-center">
+        <!-- start::subscribe-1 -->
+        <div class="col-md-12" data-aos="fade-up">
+         <div class="subscribe-1">
+          <div class="card">
+           <div class="card-body">
+            <div class="subscribe-1__start mt-5 mb-5">
+             <h2 class="heading mb-5">
+              Join Our Mailing List
+             </h2>
+             <div class="subscribe-input">
+              <form class="form-inline justify-content-center">
+               <div class="form-group">
+                <input class="form-control dexam-input h-55" placeholder="Enter your email address" required="" type="email"/>
+               </div>
+               <button class="btn btn-gradient h-55 text-19" type="submit">
+                Subscribe Now
+               </button>
+              </form>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end::subscribe-1 -->
+       </div>
+      </div>
+     </section>
+     <!-- end subscribe section -->
+     <section class="footer_wrap" id="footer-wrap">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4 mb-4" data-aos="fade-up">
+         <div class="o-hidden text-left">
+          <div class="">
+           <h4 class="card-title font-weight-bold">
+            DCCTV
+           </h4>
+           <p class="">
+            DCCTV is a tool that helps summarize long CCTV footages into short, abridged, synopsis along with automatic violence detection leveraging artificial intelligence technology.
+           </p>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-4 mb-4" data-aos="fade-up">
+         <div class="o-hidden text-left">
+          <div class="">
+           <h4 class="card-title font-weight-bold">
+            Links
+           </h4>
+           <div class="mb-5 lead">
+            <ul class="list-inline">
+             <li class="mb-3">
+              <a href="#">
+               Home
+              </a>
+             </li>
+             <li class="mb-3">
+              <a href="#features-wrap">
+               Features
+              </a>
+             </li>
+             <li class="mb-3">
+              <a href="#pricing-wrap">
+               Pricing
+              </a>
+             </li>
+             <li class="mb-3">
+              <a href="#faqs-wrap">
+               FAQ
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+        <div class="col-md-4 mb-4" data-aos="fade-up">
+         <div class="o-hidden text-left">
+          <div class="">
+           <h4 class="card-title font-weight-bold">
+            Contact Info
+           </h4>
+           <div class="address-wrap mb-3">
+            <ul class="list-group list-unstyled">
+             <li class="">
+              <i class="eva eva-pin-outline mr-2">
+              </i>
+              Lagos, Nigeria
+             </li>
+            </ul>
+           </div>
+           <div class="address-wrap mb-3">
+            <ul class="list-group list-unstyled">
+             <li class="">
+              <i class="eva eva-email-outline mr-2">
+              </i>
+              support@dcctv.xyz
+             </li>
+            </ul>
+           </div>
+           <div class="address-wrap mb-3">
+            <ul class="list-group list-unstyled">
+             <li class="">
+              <i class="eva eva-phone-call-outline mr-2">
+              </i>
+              +234 701 731 9827
+             </li>
+            </ul>
+           </div>
+           <section class="social-wrap">
+            <div class="social-btns-wrap">
+             <a class="social-btn text-30 ml-0" href="https://dcctv.xyz">
+              <i class="eva eva-globe">
+              </i>
+             </a>
+             <a class="social-btn text-30 ml-0" href="mailto:support@dcctv.xyz">
+              <i class="eva eva-email">
+              </i>
+             </a>
+             <a class="social-btn text-30 ml-0" href="https://github.com/LordGhostX/naijahacks2019-team-x">
+              <i class="eva eva-github">
+              </i>
+             </a>
+            </div>
+           </section>
+          </div>
+         </div>
+        </div>
+        <!-- end of col -->
+       </div>
+       <p>
+        Copyright © DCCTV
+        <script>
+         var date = new Date(); document.write(date.getFullYear());
+        </script>
+        .
+       </p>
+      </div>
+     </section>
+     <!-- end footer -->
+    </div>
+    <!-- ============ Main content End ============= -->
+   </div>
+  </div>
+  <!--=============== End app-Landing-wrap ================-->
+  <script src="{{ url_for('static', filename = 'js/vendor/jquery-3.3.1.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/vendor/bootstrap.bundle.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/vendor/perfect-scrollbar.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/vendor/slick.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/es5/scroll.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/es5/slick.script.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/vendor/aos.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/es5/script.min.js') }}">
+  </script>
+ </body>
+</html>
