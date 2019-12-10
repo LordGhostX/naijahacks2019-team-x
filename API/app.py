@@ -25,6 +25,10 @@ def index():
 
     return render_template("index.html")
 
+@app.route("/demo/", methods=["POST", "GET"])
+def demo():
+    return "Hello World!"
+
 def check_list():
     if not os.path.exists("lists/contact-list.json"):
         contact_list = {"subscribers": [], "messages": []}
